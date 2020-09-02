@@ -1,2 +1,2 @@
 # es6
-ECMAScript 6 practice project, try out new features
+ECMAScript 6, try out new features
