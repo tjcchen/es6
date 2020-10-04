@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rest Parameter Syntax</title>
+</head>
+<body>
+<div>The rest parameter syntax allows us to represent an indefinite number of arguments as an array</div>
+
+<script type="text/javascript">
+(function(){
+  'use strict';
+
+  // Eg 1
+  function sum(...args) {
+    return args.reduce((accum, cur) => {
+      return accum + cur;
+    });
+  }
+
+  console.log(sum(1, 2, 3)); // 6
+  console.log(sum(1, 2, 3, 4)); // 10
+
+  // Eg 2
+  function myFunc(a, b, ...manyMoreArgs) {
+    console.log('a = ', a); // a = one
+    console.log('b = ', b); // b = two
+    console.log('manyMoreArgs = ', manyMoreArgs); // ['three', 'four', 'five', 'six']
+  }
+
+  myFunc('one', 'two', 'three', 'four', 'five', 'six');
+})();
+</script>
+</body>
+</html>
