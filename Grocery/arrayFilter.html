@@ -8,12 +8,40 @@
 <body>
 <div>Array Filter Implementation</div>
 
-<script>
+<script type="text/javascript">
 (function() {
   'use strict';
 
-  
+  Array.prototype.filter = function(callback, thisArg) {
+    if (typeof this === 'undefined') {
+      throw new TypeError('this is null or not defined');
+    } 
+    
+    if (typeof callback !== 'function') {
+      throw new TypeError(callback + 'is not a function');
+    }
 
+    const res = [];
+    const Obj = Object(this);
+    const len = Obj.length >>> 0;
+
+    for (let i = 0; i < len; i++) {
+      if (i in Obj) {
+        if (callback.call(thisArg, Obj[i], i, Obj)) {
+          res.push(Obj[i]);
+        }
+      }
+    }
+
+    return res;
+  };
+
+  const arr = [1, 2, 3, 4, 5].filter(function(value) {
+    // Filter numbers larger than 3
+    return value >= 3;
+  });
+
+  console.log(arr); // [3, 4, 5]
 })();
 </script>
 </body>
