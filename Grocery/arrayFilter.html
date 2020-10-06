@@ -23,6 +23,9 @@
 
     const res = [];
     const Obj = Object(this);
+    
+    // doc1: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift
+    // doc2: https://stackoverflow.com/questions/1822350/what-is-the-javascript-operator-and-how-do-you-use-it
     const len = Obj.length >>> 0;
 
     for (let i = 0; i < len; i++) {
