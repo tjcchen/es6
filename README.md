@@ -2,8 +2,8 @@
 Try out ECMAScript 6 new features.
 
 # Documentation
-- Website 1: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-- Website 2: https://es6.ruanyifeng.com/
+MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript  
+Ruanyifeng: https://es6.ruanyifeng.com/
 
 # Contact
 Email: chenyangpoppin@gmail.com
