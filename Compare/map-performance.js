@@ -3,7 +3,7 @@
 const runCount = 100;
 const keyConut = 10000;
 
-let map = new Map();
+let map  = new Map();
 let keys = new Array(keyConut);
 
 for (let i = 0; i < keyConut; i++) {
