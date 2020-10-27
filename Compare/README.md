@@ -1,2 +1,3 @@
-# Compare
-node map-performance.js or node compare-includes-index-of.js
+# Run Comparison
+<code>node map-performance.js</code>  
+<code>node compare-includes-index-of.js</code>
