@@ -1,12 +1,38 @@
 <!doctype html>
 <html>
 <head>
-  <title>ES6 Promise</title>
+<title>ES6 Promise</title>
 </head>
 <body>
+<div>
   <p>ES6 Promise</p>
-  
-  <!-- script src="./js/basic.js"></script -->
-  <script src="./js/promiseAll.js"></script>
+</div>
+
+<!-- script src="./js/basic.js"></script -->
+<script type="text/javascript" src="./js/promiseAll.js"></script>
+<script>
+(function(win, undefined) {
+  'use strict';
+
+  //////////////////////////
+  // Promise Test Section
+  //////////////////////////
+  const promise1 = new Promise((resolve, reject) => {
+    resolve('success');
+  });
+
+  promise1.then(
+    () => {
+      // 'this' refers to 'undefined' in strict mode, and refers to window object in in sloppy mode
+      // currently, we are in strict mode
+      console.log(this);
+      console.log('fulfilled');
+    },
+    () => {
+      console.log('rejected');
+    }
+  );
+})(window);
+</script>
 </body>
 </html>
