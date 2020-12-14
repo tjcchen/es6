@@ -17,7 +17,7 @@ hello().then(
   }
 );
 
-const imageUrl = 'http://www.tjcchen.cn/love.png';
+const imageUrl = 'http://localhost:5000/Assets/algorithm.png';
 
 // fetch url data
 const myFetch = async () => {
