@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Fetch API Example</title>
+</head>
+<body>
+<h3>A Fetch API Example</h3>
+<div>
+  <img class="myImg" src="" />
+</div>
+<script type="text/javascript">
+;(function(win, undefined) {
+  'use strict';
+
+  const doc   = win.document;
+  const image = doc.querySelector('.myImg');
+  const api   = 'http://www.tjcchen.cn/post';
+  const data  = {
+    name: 'Andy Chen',
+    occupation: 'Software Engineer'
+  };
+
+  //------------------
+  // Fetch an image
+  //------------------
+
+  // Fetch API returns a Promise object if you use it directly,
+  // however, if you add await key word before fetch inside an async function, you will get an Response API object
+  fetch('../Assets/algorithm.png').then((response) => {
+    return response.blob();
+  }).then((blob) => {
+    const objectUrl = URL.createObjectURL(blob);
+
+    image.src = objectUrl;
+  });
+
+  //----------------------
+  // Fetch an Ajax call
+  //----------------------
+  const doAjax = async () => {
+    const response = await fetch(api, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      return Promise.reject('Failed');
+    } else {
+      const jsonVal = await response.json();
+      return Promise.resolve(jsonVal);
+    }
+  };
+
+  doAjax().then(console.log).catch(console.log);
+})(window);
+</script>
+</body>
+</html>
